@@ -12,10 +12,8 @@ export const convertToDays = (data) => {
 
 export const projectedInfections = (data) => {
   if (data.periodType === 'days') {
-    if (data.timeToElapse > 2) {
-      // currentlyInfected doubles every 3 days, so you'd have to multiply it by a factor of 2
-      return 2 ** Math.trunc(data.timeToElapse / 3);
-    }
+    // currentlyInfected doubles every 3 days, so you'd have to multiply it by a factor of 2
+    if (data.timeToElapse > 2) return 2 ** Math.trunc(data.timeToElapse / 3);
   } else {
     return 2 ** Math.trunc(convertToDays(data) / 3);
   }
