@@ -10,7 +10,8 @@ const impact = (data) => {
   const severeCasesByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.15);
   // Determine the number of available beds exclude the servere cases
   const hospitalBedsByRequestedTime = Math.trunc(
-    (0.35 * data.totalHospitalBeds) - severeCasesByRequestedTime);
+    (0.35 * data.totalHospitalBeds) - severeCasesByRequestedTime
+  );
 
   // Challenge 3
   // Number of severe positive cases require ICU care
