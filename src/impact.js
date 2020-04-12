@@ -20,12 +20,21 @@ const impact = (data) => {
   const casesForVentilatorsByRequestedTime = Math.trunc(infectionsByRequestedTime * 0.02);
 
   // Estimated financial loss for region
-  const dollarsInFlight = parseFloat(
-    infectionsByRequestedTime
+  // const dollarsInFlight = parseFloat(
+  //  infectionsByRequestedTime
+  //  * data.region.avgDailyIncomeInUSD
+  //  * data.region.avgDailyIncomePopulation
+  //  * convertToDays(data)
+  // ).toFixed(2);
+
+  const dollarsInFlight = Math.trunc(
+    (
+      infectionsByRequestedTime
     * data.region.avgDailyIncomeInUSD
     * data.region.avgDailyIncomePopulation
-    * convertToDays(data)
-  ).toFixed(2);
+    )
+  / convertToDays(data)
+  );
 
   return {
     currentlyInfected,
