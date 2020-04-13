@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - #BuildforSDG - COVID-19 estimator</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div>
+	<h1>COVID-19 Impact Estimator</h1>
+
+	<div id="userInput">
+		<label id="populationLbl">Population:</label>
+		<input id="data-population" type="number" value="66622705"><br><br>
+		<!--<input id="populationInput" type="number"><br><br>-->
+
+		<label id="reportedCasesLbl">Reported cases:</label>
+		<input id="data-reported-cases" type="number" value="674"><br><br>
+		<!--<input id="reportedCasesInput" type="number"><br><br>-->
+
+		<label id="totalHospitalBedsLbl">Total hospital beds:</label>
+		<input id="data-total-hospital-beds" type="number" value="1380614"><br><br>
+		<!--<input id="totalHospitalBedsInput" type="number"><br><br>-->
+
+		<label id="timeToElapseLbl">Duration:</label>
+		<input id="data-time-to-elapse" type="number" value="58"><br><br>
+		<!--<input id="timeToElapseInput" type="number"><br><br>-->
+
+		<label id="periodTypeLbl">Period type:</label><br>
+		<select id="data-period-type" name="cars">
+			<option value="days" selected>days</option>
+			<option value="weeks">weeks</option>
+			<option value="months">months</option>
+		</select>
+
+		<br><br>
+		<!--<input type="submit" value="Get estimate">-->
+		<input id="data-go-estimate" type="submit" value="Get estimate">
+		<input type="reset" value="Default values">
+	</div>
+
+	<canvas id="myChart"></canvas>
+	<br>
+	<h2>#BuildforSDG by Carike</h2>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0'></script><script  src="./script.js"></script>
+
+</body>
+</html>
