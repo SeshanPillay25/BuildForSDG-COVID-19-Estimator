@@ -1,4 +1,4 @@
-import { convertToDays, projectedInfections } from './helper';
+import { convertToDays, projectedInfections } from './helper.js';
 
 const impact = (data) => {
   // Challenge 1
