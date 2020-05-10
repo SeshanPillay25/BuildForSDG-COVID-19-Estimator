@@ -1,27 +1,31 @@
-import {convertToDays, projectedInfections} from './helper.js';
+import { convertToDays, projectedInfections } from './helper.js';
 
 const severeImpact = (data) => {
   // Challenge 1
   const currentlyInfected = data.reportedCases * 50;
   const infectionsByRequestedTime =
-      currentlyInfected * projectedInfections(data);
+    currentlyInfected * projectedInfections(data);
 
   // Challenge 2
   // Estimated number of severe positive cases that will require hospitalization
   // to recover
-  const severeCasesByRequestedTime =
-      Math.trunc(infectionsByRequestedTime * 0.15);
+  const severeCasesByRequestedTime = Math.trunc(
+    infectionsByRequestedTime * 0.15
+  );
   // Determine the number of available beds exclude the servere cases
-  const hospitalBedsByRequestedTime =
-      Math.trunc((0.35 * data.totalHospitalBeds) - severeCasesByRequestedTime);
+  const hospitalBedsByRequestedTime = Math.trunc(
+    0.35 * data.totalHospitalBeds - severeCasesByRequestedTime
+  );
 
   // Challenge 3
   // Number of severe positive cases require ICU care
-  const casesForICUByRequestedTime =
-      Math.trunc(infectionsByRequestedTime * 0.05);
+  const casesForICUByRequestedTime = Math.trunc(
+    infectionsByRequestedTime * 0.05
+  );
   // Number of severe positive cases require ventilators
-  const casesForVentilatorsByRequestedTime =
-      Math.trunc(infectionsByRequestedTime * 0.02);
+  const casesForVentilatorsByRequestedTime = Math.trunc(
+    infectionsByRequestedTime * 0.02
+  );
 
   // Estimated financial loss for region
   // const dollarsInFlight = parseFloat(
@@ -31,10 +35,12 @@ const severeImpact = (data) => {
   //  * convertToDays(data)
   // ).toFixed(2);
 
-  const dollarsInFlight =
-      Math.trunc((infectionsByRequestedTime * data.region.avgDailyIncomeInUSD *
-                  data.region.avgDailyIncomePopulation) /
-                 convertToDays(data));
+  const dollarsInFlight = Math.trunc(
+    (infectionsByRequestedTime *
+      data.region.avgDailyIncomeInUSD *
+      data.region.avgDailyIncomePopulation) /
+      convertToDays(data)
+  );
 
   return {
     currentlyInfected,
