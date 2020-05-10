@@ -1,44 +1,44 @@
   <!DOCTYPE html>
   <html lang="en">
-  
+
   <head>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <meta name="Description" content="Carike Blignaut-Staden buildt a simple COVID-19 estimator build for Facebook Developer Circles and Andela challenge to develop solutions for Sustainable Development Goals program.">
 	  <title>#BuildforSDG - COVID-19 estimator</title>
-  
+
   </head>
-  
+
   <body>
 	  <!-- partial:index.partial.html -->
 	  <div>
 		  <h1>COVID-19 Impact Estimator</h1>
-  
+
 		  <div id="userInput">
 			  <label id="populationLbl">Population:
 				  <input data-population= "population" id="data-population" type="number" value="66622705"><br><br>
 			  </label>
-  
+
 			  <!--<input id="populationInput" type="number"><br><br>-->
-  
+
 			  <label id="reportedCasesLbl">Reported cases:
 				  <input data-reported-cases="reportedCases" id="data-reported-cases" type="number" value="674"><br><br>
 			  </label>
-  
+
 			  <!--<input id="reportedCasesInput" type="number"><br><br>-->
-  
+
 			  <label id="totalHospitalBedsLbl">Total hospital beds:
 				  <input data-total-hospital-beds="totalHospitalBedsInput" id="data-total-hospital-beds" type="number" value="1380614"><br><br>
 			  </label>
-  
+
 			  <!--<input id="totalHospitalBedsInput" type="number"><br><br>-->
-  
+
 			  <label id="timeToElapseLbl">Duration:
 				  <input data-time-to-elapse="timeToElapseInput" id="data-time-to-elapse" type="number" value="58"><br><br>
 			  </label>
-  
+
 			  <!--<input id="timeToElapseInput" type="number"><br><br>-->
-  
+
 			  <label id="periodTypeLbl">Period type:
 				  <select data-period-type="periodType" id="data-period-type" name="time">
 					  <option data-period-type="days" value="days" selected>days</option>
@@ -46,13 +46,13 @@
 					  <option data-period-type="months" value="months">months</option>
 				  </select><br><br>
 			  </label><br>
-  
+
 			  <br><br>
 			  <!--<input type="submit" value="Get estimate">-->
 			  <input data-go-estimate="goEstimate" id="data-go-estimate" type="submit" value="Get estimate">
 			  <input type="reset" value="Default values">
 		  </div>
-  
+
 		  <canvas id="myChart"></canvas>
 		  <br>
 		  <h2>#BuildforSDG by Carike</h2>
@@ -61,5 +61,5 @@
 	  <script src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0'></script>
 	  <script type="module" defer src="/src/index.js"></script> -->
   </body>
-  
+
   </html>
